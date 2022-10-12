@@ -12,6 +12,7 @@
 		92A93EE728F45E300066F832 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A93EE628F45E300066F832 /* PasswordViewController.swift */; };
 		92A93EEC28F45E360066F832 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92A93EEB28F45E360066F832 /* Assets.xcassets */; };
 		92A93EEF28F45E360066F832 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92A93EED28F45E360066F832 /* LaunchScreen.storyboard */; };
+		92A93F1828F69A990066F832 /* ExtensionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A93F1728F69A990066F832 /* ExtensionString.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		92A93EF028F45E360066F832 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92A93EF528F45E360066F832 /* iOS7-HW17-Kholodkov DenisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS7-HW17-Kholodkov DenisTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92A93EFF28F45E360066F832 /* iOS7-HW17-Kholodkov DenisUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS7-HW17-Kholodkov DenisUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		92A93F1728F69A990066F832 /* ExtensionString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionString.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		92A93F1228F45E870066F832 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				92A93F1628F69A500066F832 /* Extension */,
 				92A93F1328F45E9D0066F832 /* App */,
 				92A93F1528F63A3E0066F832 /* Controllers */,
 			);
@@ -129,6 +132,14 @@
 				92A93EE628F45E300066F832 /* PasswordViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		92A93F1628F69A500066F832 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				92A93F1728F69A990066F832 /* ExtensionString.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92A93F1828F69A990066F832 /* ExtensionString.swift in Sources */,
 				92A93EE728F45E300066F832 /* PasswordViewController.swift in Sources */,
 				92A93EE328F45E300066F832 /* AppDelegate.swift in Sources */,
 				92A93EE528F45E300066F832 /* SceneDelegate.swift in Sources */,

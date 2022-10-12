@@ -105,7 +105,6 @@ class PasswordViewController: UIViewController {
     }
 
     private func setupLayout() {
-
         NSLayoutConstraint.activate([
 
             activityIndicatorView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100),
@@ -175,9 +174,7 @@ class PasswordViewController: UIViewController {
 // MARK: - Multithreading function
 
     func bruteForce(passwordToUnlock: String) {
-
         let allowedCharacters: [String] = String().printable.map { String($0) }
-
         var password: String = ""
 
         queue.async {
@@ -229,8 +226,7 @@ func indexOf(character: Character, _ array: [String]) -> Int {
 }
 
 func characterAt(index: Int, _ array: [String]) -> Character {
-    return index < array.count ? Character(array[index])
-    : Character("")
+    return index < array.count ? Character(array[index]): Character("")
 }
 
 func generateBruteForce(_ string: String, fromArray array: [String]) -> String {

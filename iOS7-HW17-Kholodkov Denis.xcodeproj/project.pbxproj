@@ -9,13 +9,9 @@
 /* Begin PBXBuildFile section */
 		92A93EE328F45E300066F832 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A93EE228F45E300066F832 /* AppDelegate.swift */; };
 		92A93EE528F45E300066F832 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A93EE428F45E300066F832 /* SceneDelegate.swift */; };
-		92A93EE728F45E300066F832 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A93EE628F45E300066F832 /* ViewController.swift */; };
-		92A93EEA28F45E300066F832 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92A93EE828F45E300066F832 /* Main.storyboard */; };
+		92A93EE728F45E300066F832 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A93EE628F45E300066F832 /* PasswordViewController.swift */; };
 		92A93EEC28F45E360066F832 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92A93EEB28F45E360066F832 /* Assets.xcassets */; };
 		92A93EEF28F45E360066F832 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92A93EED28F45E360066F832 /* LaunchScreen.storyboard */; };
-		92A93EFA28F45E360066F832 /* iOS7_HW17_Kholodkov_DenisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A93EF928F45E360066F832 /* iOS7_HW17_Kholodkov_DenisTests.swift */; };
-		92A93F0428F45E360066F832 /* iOS7_HW17_Kholodkov_DenisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A93F0328F45E360066F832 /* iOS7_HW17_Kholodkov_DenisUITests.swift */; };
-		92A93F0628F45E360066F832 /* iOS7_HW17_Kholodkov_DenisUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A93F0528F45E360066F832 /* iOS7_HW17_Kholodkov_DenisUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,16 +35,12 @@
 		92A93EDF28F45E300066F832 /* iOS7-HW17-Kholodkov Denis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS7-HW17-Kholodkov Denis.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92A93EE228F45E300066F832 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92A93EE428F45E300066F832 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		92A93EE628F45E300066F832 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		92A93EE928F45E300066F832 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		92A93EE628F45E300066F832 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		92A93EEB28F45E360066F832 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92A93EEE28F45E360066F832 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92A93EF028F45E360066F832 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92A93EF528F45E360066F832 /* iOS7-HW17-Kholodkov DenisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS7-HW17-Kholodkov DenisTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		92A93EF928F45E360066F832 /* iOS7_HW17_Kholodkov_DenisTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS7_HW17_Kholodkov_DenisTests.swift; sourceTree = "<group>"; };
 		92A93EFF28F45E360066F832 /* iOS7-HW17-Kholodkov DenisUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS7-HW17-Kholodkov DenisUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		92A93F0328F45E360066F832 /* iOS7_HW17_Kholodkov_DenisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS7_HW17_Kholodkov_DenisUITests.swift; sourceTree = "<group>"; };
-		92A93F0528F45E360066F832 /* iOS7_HW17_Kholodkov_DenisUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS7_HW17_Kholodkov_DenisUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +72,6 @@
 			isa = PBXGroup;
 			children = (
 				92A93EE128F45E300066F832 /* iOS7-HW17-Kholodkov Denis */,
-				92A93EF828F45E360066F832 /* iOS7-HW17-Kholodkov DenisTests */,
-				92A93F0228F45E360066F832 /* iOS7-HW17-Kholodkov DenisUITests */,
 				92A93EE028F45E300066F832 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,32 +89,46 @@
 		92A93EE128F45E300066F832 /* iOS7-HW17-Kholodkov Denis */ = {
 			isa = PBXGroup;
 			children = (
-				92A93EE228F45E300066F832 /* AppDelegate.swift */,
-				92A93EE428F45E300066F832 /* SceneDelegate.swift */,
-				92A93EE628F45E300066F832 /* ViewController.swift */,
-				92A93EE828F45E300066F832 /* Main.storyboard */,
-				92A93EEB28F45E360066F832 /* Assets.xcassets */,
-				92A93EED28F45E360066F832 /* LaunchScreen.storyboard */,
-				92A93EF028F45E360066F832 /* Info.plist */,
+				92A93F1428F45EB50066F832 /* Resources */,
+				92A93F1228F45E870066F832 /* Sources */,
 			);
 			path = "iOS7-HW17-Kholodkov Denis";
 			sourceTree = "<group>";
 		};
-		92A93EF828F45E360066F832 /* iOS7-HW17-Kholodkov DenisTests */ = {
+		92A93F1228F45E870066F832 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				92A93EF928F45E360066F832 /* iOS7_HW17_Kholodkov_DenisTests.swift */,
+				92A93F1328F45E9D0066F832 /* App */,
+				92A93F1528F63A3E0066F832 /* Controllers */,
 			);
-			path = "iOS7-HW17-Kholodkov DenisTests";
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		92A93F0228F45E360066F832 /* iOS7-HW17-Kholodkov DenisUITests */ = {
+		92A93F1328F45E9D0066F832 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				92A93F0328F45E360066F832 /* iOS7_HW17_Kholodkov_DenisUITests.swift */,
-				92A93F0528F45E360066F832 /* iOS7_HW17_Kholodkov_DenisUITestsLaunchTests.swift */,
+				92A93EE228F45E300066F832 /* AppDelegate.swift */,
+				92A93EE428F45E300066F832 /* SceneDelegate.swift */,
 			);
-			path = "iOS7-HW17-Kholodkov DenisUITests";
+			path = App;
+			sourceTree = "<group>";
+		};
+		92A93F1428F45EB50066F832 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				92A93EEB28F45E360066F832 /* Assets.xcassets */,
+				92A93EED28F45E360066F832 /* LaunchScreen.storyboard */,
+				92A93EF028F45E360066F832 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		92A93F1528F63A3E0066F832 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				92A93EE628F45E300066F832 /* PasswordViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +237,6 @@
 			files = (
 				92A93EEF28F45E360066F832 /* LaunchScreen.storyboard in Resources */,
 				92A93EEC28F45E360066F832 /* Assets.xcassets in Resources */,
-				92A93EEA28F45E300066F832 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92A93EE728F45E300066F832 /* ViewController.swift in Sources */,
+				92A93EE728F45E300066F832 /* PasswordViewController.swift in Sources */,
 				92A93EE328F45E300066F832 /* AppDelegate.swift in Sources */,
 				92A93EE528F45E300066F832 /* SceneDelegate.swift in Sources */,
 			);
@@ -268,7 +271,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92A93EFA28F45E360066F832 /* iOS7_HW17_Kholodkov_DenisTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,8 +278,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92A93F0428F45E360066F832 /* iOS7_HW17_Kholodkov_DenisUITests.swift in Sources */,
-				92A93F0628F45E360066F832 /* iOS7_HW17_Kholodkov_DenisUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +297,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		92A93EE828F45E300066F832 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				92A93EE928F45E300066F832 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		92A93EED28F45E360066F832 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -439,12 +431,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3L65F6AAP4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "iOS7-HW17-Kholodkov Denis/Info.plist";
+				INFOPLIST_FILE = "iOS7-HW17-Kholodkov Denis/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -467,12 +457,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3L65F6AAP4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "iOS7-HW17-Kholodkov Denis/Info.plist";
+				INFOPLIST_FILE = "iOS7-HW17-Kholodkov Denis/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

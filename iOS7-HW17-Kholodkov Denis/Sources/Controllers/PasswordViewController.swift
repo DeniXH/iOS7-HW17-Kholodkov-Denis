@@ -8,77 +8,53 @@
 import UIKit
 
 class PasswordViewController: UIViewController {
-
-// MARK: - Flags
-
-    var isStart = false
-    var isCycleRunning = true
-    var isButtonStopPressed = false
-    let queue = DispatchQueue.global(qos: .background)
-
-// MARK: - UI elements
-
+    
+    // MARK: - Flags
+    
+   private var isStart = false
+   private var isCycleRunning = true
+   private var isButtonStopPressed = false
+   private let queue = DispatchQueue.global(qos: .background)
+    
+    // MARK: - UI elements
+    
     private lazy var textFieldPassword: UITextField = {
         var textFieldPassword = UITextField()
         textFieldPassword.text = ""
         textFieldPassword.textAlignment = .center
         textFieldPassword.isSecureTextEntry = true
         textFieldPassword.sizeToFit()
-        textFieldPassword.backgroundColor = UIColor(red: 53/255.0,
-                                                    green: 193/255.0,
-                                                    blue: 148/255.0,
-                                                    alpha: 100)
-        textFieldPassword.layer.cornerRadius = 16
+        textFieldPassword.backgroundColor = Metric.textFieldBackground
+        textFieldPassword.layer.cornerRadius = Metric.cornerRadius
         textFieldPassword.translatesAutoresizingMaskIntoConstraints = false
         return textFieldPassword
     }()
-
+    
     private lazy var labelSecond: UILabel = {
         var labelSecond = UILabel()
         labelSecond.text = "result"
-        labelSecond.textColor = UIColor(red: 183/255.0,
-                                        green: 154/255.0,
-                                        blue: 194/255.0,
-                                        alpha: 100)
+        labelSecond.textColor = Metric.labelSecondTextColor
         labelSecond.backgroundColor = view.backgroundColor
         labelSecond.textAlignment = .center
         labelSecond.sizeToFit()
         labelSecond.backgroundColor = .clear
         labelSecond.clipsToBounds = true
-        labelSecond.layer.cornerRadius = 16
+        labelSecond.layer.cornerRadius = Metric.cornerRadius
         labelSecond.translatesAutoresizingMaskIntoConstraints = false
         return labelSecond
     }()
-
-    private lazy var buttonStart: UIButton = {
-        var buttonStart = UIButton()
-        buttonStart.setTitle("start", for: .normal)
-        buttonStart.backgroundColor = .systemGreen
-        buttonStart.layer.cornerRadius = 16
-        buttonStart.addTarget(self, action: #selector(buttonStartPressed), for: .touchUpInside)
-        buttonStart.translatesAutoresizingMaskIntoConstraints = false
-        return buttonStart
-    }()
-
-    private lazy var buttonColor: UIButton = {
-        var buttonColor = UIButton()
-        buttonColor.setTitle("color", for: .normal)
-        buttonColor.backgroundColor = .magenta
-        buttonColor.layer.cornerRadius = 16
-        buttonColor.addTarget(self, action: #selector(buttonColorPressed), for: .touchUpInside)
-        buttonColor.translatesAutoresizingMaskIntoConstraints = false
-        return buttonColor
-    }()
-
-    private lazy var buttonStop: UIButton = {
-        var buttonStop = UIButton()
-        buttonStop.setTitle("stop", for: .normal)
-        buttonStop.backgroundColor = .orange
-        buttonStop.layer.cornerRadius = 16
-        buttonStop.addTarget(self, action: #selector(buttonStopPressed), for: .touchUpInside)
-        buttonStop.translatesAutoresizingMaskIntoConstraints = false
-        return buttonStop
-    }()
+    
+    // MARK: - create buttons
+    
+    private lazy var buttonStart = makeButton(title: "start",
+                                              action: #selector(buttonStartPressed),
+                                              color: .systemGreen)
+    private lazy var buttonColor = makeButton(title: "color",
+                                              action: #selector(buttonColorPressed),
+                                              color: .magenta)
+    private lazy var buttonStop = makeButton(title: "stop",
+                                             action: #selector(buttonStopPressed),
+                                             color: .orange)
 
     private lazy var activityIndicatorView: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView(style: .large)
@@ -86,15 +62,15 @@ class PasswordViewController: UIViewController {
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         return activityIndicator
     }()
-
-// MARK: - LifeCicle
-
+    
+    // MARK: - LifeCicle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupHierarchy()
         setupLayout()
     }
-
+    
     private func setupHierarchy() {
         view.addSubview(activityIndicatorView)
         view.addSubview(textFieldPassword)
@@ -103,80 +79,76 @@ class PasswordViewController: UIViewController {
         view.addSubview(buttonStop)
         view.addSubview(buttonColor)
     }
-
+    
     private func setupLayout() {
         NSLayoutConstraint.activate([
-
-            activityIndicatorView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100),
+            
+            activityIndicatorView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Metric.distanceTopToIndicator),
             activityIndicatorView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             activityIndicatorView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-
-            textFieldPassword.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 150),
-            textFieldPassword.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 80),
-            textFieldPassword.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -80),
-            textFieldPassword.heightAnchor.constraint(equalToConstant: 30),
-
-            labelSecond.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 200),
-            labelSecond.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 70),
-            labelSecond.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -70),
-            labelSecond.heightAnchor.constraint(equalToConstant: 40),
-
-            buttonStart.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 260),
-            buttonStart.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 80),
-            buttonStart.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -200),
-            buttonStart.heightAnchor.constraint(equalToConstant: 30),
-            buttonStart.widthAnchor.constraint(equalToConstant: 150),
-
-            buttonStop.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 260),
-            buttonStop.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 200),
-            buttonStop.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -80),
-            buttonStop.heightAnchor.constraint(equalToConstant: 30),
-            buttonStop.widthAnchor.constraint(equalToConstant: 150),
-
-            buttonColor.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 310),
-            buttonColor.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 80),
-            buttonColor.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -80),
-            buttonColor.heightAnchor.constraint(equalToConstant: 30),
-            buttonColor.widthAnchor.constraint(equalToConstant: 150)
-
+            
+            textFieldPassword.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Metric.distanceTopTotextField),
+            textFieldPassword.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Metric.leadingValue),
+            textFieldPassword.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: Metric.trailingValue),
+            textFieldPassword.heightAnchor.constraint(equalToConstant: Metric.buttoAndLabelHeight),
+            
+            labelSecond.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Metric.distanceTopToLabelSecond),
+            labelSecond.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Metric.leadingLabelSecond),
+            labelSecond.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: Metric.trailingLabelSecond),
+            labelSecond.heightAnchor.constraint(equalToConstant: Metric.buttoAndLabelHeight),
+            
+            buttonStart.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Metric.distanceTopToButtonStartAndStop),
+            buttonStart.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Metric.leadingValue),
+            buttonStart.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: Metric.trailingButtonStart),
+            buttonStart.heightAnchor.constraint(equalToConstant: Metric.heightButton),
+            buttonStart.widthAnchor.constraint(equalToConstant: Metric.widthtButton),
+            
+            buttonStop.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Metric.distanceTopToButtonStartAndStop),
+            buttonStop.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Metric.leadingButtonStop),
+            buttonStop.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: Metric.trailingValue),
+            buttonStop.heightAnchor.constraint(equalToConstant: Metric.heightButton),
+            buttonStop.widthAnchor.constraint(equalToConstant: Metric.widthtButton),
+            
+            buttonColor.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Metric.distanceTopToButtonColor),
+            buttonColor.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: Metric.leadingValue),
+            buttonColor.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: Metric.trailingValue),
+            buttonColor.heightAnchor.constraint(equalToConstant: Metric.heightButton),
+            buttonColor.widthAnchor.constraint(equalToConstant: Metric.widthtButton)
+            
         ])
     }
-
-// MARK: - change backGroundColor
-
-    var isDoor: Bool = true {
+    
+    // MARK: - change backGroundColor
+    
+   private var isDoor: Bool = true {
         didSet {
-            if isDoor {
-                view.backgroundColor = .white
-            } else {
-                view.backgroundColor = .black
-            }
+            view.backgroundColor = isDoor ? .white : .black
         }
     }
-
-// MARK: - button Actions
-
-    @objc func buttonStartPressed() {
+    
+    // MARK: - button Actions
+    
+    @objc private func buttonStartPressed() {
         isStart = true
         isButtonStopPressed = false
         textFieldPassword.isSecureTextEntry = true
         bruteForce(passwordToUnlock: textFieldPassword.text ?? "")
     }
-
-    @objc func buttonColorPressed() {
+    
+    @objc private func buttonColorPressed() {
         isDoor.toggle()
     }
-
-    @objc func buttonStopPressed() {
-        isButtonStopPressed = isButtonStopPressed ? false : true
+    
+    @objc private func buttonStopPressed() {
+        isButtonStopPressed = !isButtonStopPressed // если будет true, то поменяет на false и наоборот
     }
-
-// MARK: - Multithreading function
-
-    func bruteForce(passwordToUnlock: String) {
+    
+    // MARK: - Multithreading function
+    
+   private func bruteForce(passwordToUnlock: String) {
         let allowedCharacters: [String] = String().printable.map { String($0) }
         var password: String = ""
-
+        
         queue.async {
             if self.isStart {
                 while password != passwordToUnlock && !self.isButtonStopPressed {

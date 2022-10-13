@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9292277728F83F0C0023D13E /* Metric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9292277628F83F0C0023D13E /* Metric.swift */; };
+		9292277928F840970023D13E /* ExtensionPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9292277828F840970023D13E /* ExtensionPasswordViewController.swift */; };
 		92A93EE328F45E300066F832 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A93EE228F45E300066F832 /* AppDelegate.swift */; };
 		92A93EE528F45E300066F832 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A93EE428F45E300066F832 /* SceneDelegate.swift */; };
 		92A93EE728F45E300066F832 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A93EE628F45E300066F832 /* PasswordViewController.swift */; };
@@ -33,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9292277628F83F0C0023D13E /* Metric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metric.swift; sourceTree = "<group>"; };
+		9292277828F840970023D13E /* ExtensionPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionPasswordViewController.swift; sourceTree = "<group>"; };
 		92A93EDF28F45E300066F832 /* iOS7-HW17-Kholodkov Denis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS7-HW17-Kholodkov Denis.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92A93EE228F45E300066F832 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92A93EE428F45E300066F832 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +74,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9292277A28F84E620023D13E /* Metric */ = {
+			isa = PBXGroup;
+			children = (
+				9292277628F83F0C0023D13E /* Metric.swift */,
+			);
+			path = Metric;
+			sourceTree = "<group>";
+		};
 		92A93ED628F45E300066F832 = {
 			isa = PBXGroup;
 			children = (
@@ -100,9 +112,10 @@
 		92A93F1228F45E870066F832 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				92A93F1628F69A500066F832 /* Extension */,
 				92A93F1328F45E9D0066F832 /* App */,
 				92A93F1528F63A3E0066F832 /* Controllers */,
+				92A93F1628F69A500066F832 /* Extension */,
+				9292277A28F84E620023D13E /* Metric */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -138,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				92A93F1728F69A990066F832 /* ExtensionString.swift */,
+				9292277828F840970023D13E /* ExtensionPasswordViewController.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -274,6 +288,8 @@
 			files = (
 				92A93F1828F69A990066F832 /* ExtensionString.swift in Sources */,
 				92A93EE728F45E300066F832 /* PasswordViewController.swift in Sources */,
+				9292277728F83F0C0023D13E /* Metric.swift in Sources */,
+				9292277928F840970023D13E /* ExtensionPasswordViewController.swift in Sources */,
 				92A93EE328F45E300066F832 /* AppDelegate.swift in Sources */,
 				92A93EE528F45E300066F832 /* SceneDelegate.swift in Sources */,
 			);
@@ -446,7 +462,8 @@
 				INFOPLIST_FILE = "iOS7-HW17-Kholodkov Denis/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -472,7 +489,8 @@
 				INFOPLIST_FILE = "iOS7-HW17-Kholodkov Denis/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
